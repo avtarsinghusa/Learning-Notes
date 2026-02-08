@@ -143,7 +143,8 @@ store_data.iloc[[1,4],[0,2]]
 ```
 * **Difference between loc and iloc indexing methods**
   * loc is label-based, which means that you have to specify rows and columns based on their row and column labels.
-  * iloc is integer position-based, so you have to specify rows and columns by their integer position values 
+  * iloc is integer position-based, so you have to specify rows and columns by their integer position values
+  * loc exclude the end index whereas iloc include the end index. e.g. loc[0,2] exclude the index 2 where as iloc includes the index 2. 
 * **We can modify entries of a dataframe using loc or iloc too**
 ```
 store_data.loc[4,'type'] = 'Electronics'
