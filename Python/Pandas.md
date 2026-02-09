@@ -109,7 +109,14 @@ store_data[:1]
   * loc is a method to access rows and columns on pandas objects. When using the loc method on a dataframe, we specify which rows and which columns we want by using the format: 
     **dataframe.loc[row selection, column selection]**
   * DataFrame.loc[] method is a method that **takes only index labels** and returns row or dataframe if the index label exists in the data frame.
+  * Slicing is inclusive ('A':'C' includes 'C')
+  * Supports boolean conditions
  ```
+df.loc['A']              # row with index label 'A'
+df.loc[:, 'age']         # all rows, column named 'age'
+df.loc['A':'C']          # rows A through C (inclusive!)
+df.loc[df['age'] > 30]   # boolean filtering
+
 # accessing first index value using loc method (indexing starts from 0 in python)
 store_data.loc[0 ]
 
@@ -131,9 +138,15 @@ store_data.loc[0:0, :]
 store_data.loc[[1,4],['type', 'location']]
 ```
 * iloc method
+    * Slicing is exclusive at the end (like Python)
     * The iloc indexer for Pandas Dataframe is used for integer location-based indexing/selection by position. When using the iloc method on a dataframe, we specify which rows and which columns we want by using the format: 
         **dataframe.iloc[row selection, column selection]**
 ```
+df.iloc[0]               # first row
+df.iloc[:, 1]            # second column
+df.iloc[0:3]             # rows at positions 0,1,2
+df.iloc[2, 3]            # row 3, column 4
+
 # accessing selected rows and columns using iloc method
 store_data.iloc[[1,4],[0,2]]
 
