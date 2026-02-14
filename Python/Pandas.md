@@ -379,7 +379,30 @@ data=pd.read_csv(path)
 * **max()** - to check the maximum value of a numeric column -- ``` data['price'].max() ```
 * **unique()** - to check the number of unique values that are present in a column -- ``` data['stock'].unique() ```
 * **value_counts()** - to check the number of values that each unique quantity has in a column -- ``` data['stock'].value_counts() ```
+*  On setting the **normalize parameter to True**, the **value_counts()** function returns the relative frequencies of unique values within the Series.
+```
+import pandas as pd
 
+# Creating a Series
+data = pd.Series(['Apple', 'Banana', 'Apple', 'Apple', 'Chocolate', 'Banana'])
+
+# Statement A: Standard value_counts()
+counts = data.value_counts()
+
+# Statement B: value_counts(normalize=True)
+frequencies = data.value_counts(normalize=True)
+
+print("--- Absolute Counts ---")
+print(counts)
+print("\n--- Relative Frequencies ---")
+print(frequencies)
+
+Breakdown of the Output
+Value	  Absolute Count (Statement A)	Relative Frequency (Statement B)
+Apple	       3	                        0.5 (or 50%)
+Banana	     2	                        0.333 (or 33.3%)
+Chocolate	   1	                        0.166 (or 16.7%)
+```
 ####   Statistical Functions
 * **mean()** - to check the mean (average) value of the column -- ``` data['price'].mean() ```
 * **median()** - to check the median value of the column -- ``` data['price'].median() ```
