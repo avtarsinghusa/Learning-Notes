@@ -1,9 +1,9 @@
-# Exploratory Data Analysis Techniques
+# Exploratory Data Analysis Techniques -- Week 3
 * When we know what kind of values to consider as anomalies in the data, We can do the replacement of **missing** and **inf** to NaN while loading the data.
 ```
 data = pd.read_csv('/content/drive/MyDrive/Melbourne_Housing.csv',na_values=['missing','inf'])
 
-# **Checking for missing values in the data**
+# Checking for missing values in the data
 data.isnull().sum()
 
 # Checking for duplicate entries in the data
@@ -14,7 +14,33 @@ data.drop_duplicates(inplace=True)
 
 # resetting the index of data frame since some rows will be removed
 data.reset_index(drop=True,inplace=True)
+
+# This forces pandas to analyze all columns, regardless of their data type (numerical, categorical/object, datetime, etc.).
+df.describe(include='all').T
 ```
+* **unique()** -- method returns an array of the actual unique values found in the Series, in the order they first appeared.
+* **nunique()** -- method returns the count of unique values in the Series.
+```
+import pandas as pd
+
+# Creating a Series with repeating values
+data = pd.Series(['Apple', 'Banana', 'Apple', 'Orange', 'Banana', 'Banana'])
+
+# Get the actual unique values
+unique_values = data.unique()
+
+# Get the count of unique values
+count_unique = data.nunique()
+
+print("Unique Values:", unique_values)
+print("Count of Unique Values:", count_unique)
+
+# Output--
+# Unique Values: ['Apple' 'Banana' 'Orange']
+# Count of Unique Values: 3
+```
+
+
 ### Univariate Analysis
 
 ### Bivariate / Mulitvariate Analysis
