@@ -171,4 +171,54 @@ plt.legend(bbox_to_anchor=[1, 1]); #another way to change the legend's location 
 * We create a line chart is to emphasize changes in value, rather than the magnitude of the values themselves, and hence, a zero line is not meaningful.
 
 #### Scatterplot
+Sometimes we want to know **if two variables mean something when put together**, whether a small change in one variable affects the other variable. In such cases, plotting a **scatterplot**, or **scatter-diagram**, with our data points can help us to check whether there is a potential relationship between them.
+* A scatterplot is the simplest mode of a diagrammatic representation of two variables.
+* It takes two perpendicular axes of coordinates, one for x and one for y.
+* Unlike the lineplot, it directly plots each pair of values as a point on the 2D space.
+* The s**catterplot()** function of seaborn can be used to make a scatterplot.
+```
+sns.scatterplot(data=df, x='engine_size', y='horsepower');
+```
+* We can also check the relationship between two variables for different categories by specifying the **hue** parameter.
+```
+sns.scatterplot(data=df, x='engine_size', y='horsepower', hue='fuel_type');
+```
+* We can assign the **same variable as hue to another parameter style** which will vary the markers and create a more readable plot.
+```
+sns.scatterplot(data=df, x='engine_size', y='horsepower', hue='fuel_type', style='fuel_type');
+```
+* **Correlation** means association. More precisely, it expresses the extent to which two variables change together at a constant rate.
+- In a scatter plot when the y variable tends to increase as the x variable increases, we say there is a **positive correlation** between the variables.
+- Again, when the y variable tends to decrease as the x variable increases, we say there is a **negative correlation** between the variables.
+- If the points on the scatter plot seem to be scattered randomly, we say that there is **no correlation** between the variables.
+* **Note**: A **strong correlation** will have **data points close together**, while a **weak correlation** will have **data points that are further apart**.
+* We can not measure the relationship quantitatively using a scatter plot. It just gives an expression for the relative change between the variables.
 
+#### Pair Plot
+* A pairplot **shows the relationship between two numeric variables for each pair of columns in the dataset**.
+* It creates a grid of axes such that each variable in data will be shared in the y-axis across a single row and in the x-axis across a single column.
+* The **pairplot()** function of seaborn can be used to create such a plot.
+```
+sns.pairplot(data=df[['normalized_losses','wheel_base','curb_weight','engine_size','price','peak_rpm']])
+
+# We can add the hue parameter in pairplot to create a semantic mapping. It changes the default marginal plot to a layered kde plot.
+sns.pairplot(data=df, vars=['wheel_base', 'curb_weight', 'engine_size', 'price'], hue='number_of_doors');
+
+# We can set corner=True to plot only the lower triangle of a pairplot.
+sns.pairplot(data=df, vars=['wheel_base', 'curb_weight', 'engine_size', 'price'], corner=True);
+```
+
+#### Heat Map
+* A heatmap is a graphical representation of data as a color-encoded matrix.
+* It is a great way of representing the correlation for each pair of columns in the data.
+* The **heatmap()** function of seaborn helps us to create such a plot.
+```
+sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr());
+
+# We can set the annot parameter to True for displaying the numeric value in each cell.
+# To remove the color bar, the cbar parameter can be set to False.
+sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr(), annot=True, cbar=False);
+
+# We can apply a different colormap with the cmap parameter for better visual appeal.
+sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr(), annot=True, cmap='YlGnBu');
+```
