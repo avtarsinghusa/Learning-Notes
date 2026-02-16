@@ -22,7 +22,8 @@ plt.xlabel('Price of cars')
 plt.ylabel('Frequency')
 sns.histplot(data=df, x='price',color='orange');
 ```
-* We can **specify the number of intervals** (or groups or bins) to create by setting the **bins parameter**. If not specified it is passed to numpy.histogram_bin_edges()
+* We can **specify the number of intervals** (or groups or bins) to create by setting the **bins parameter**.
+* If not specified it is passed to numpy.histogram_bin_edges()
 ```
 sns.histplot(data=df, x='price', bins=5)  # bins are the number of bars dipslayed.
 ```
@@ -42,7 +43,8 @@ sns.histplot(data=df, x='price', kde=True);
 * A histogram **skewed to the right** has a large number of occurrences on the left side of the plot and a few on the right side of the plot. (**Skewed** -- suddenly change direction or position.)
 * Similarly, a histogram **skewed to the left** has a large number of occurrences on the right side of the plot and few on the left side of the plot.
 
-* **Histograms are intuitive but it is hardly a good choice when we want to compare the distributions of several groups**. For example, Show price for different body style (Convertible, hatchback, sedan, wagon, hardtop etc) in one graph the view will not be clear.
+* **Histograms are intuitive but it is hardly a good choice when we want to compare the distributions of several groups**.
+* For example, Show price for different body style (Convertible, hatchback, sedan, wagon, hardtop etc) in one graph the view will not be clear.
 * **hue** -- parameter of the histplot() function can be used to create separate histograms for different categories groups and display them by stacking into one histogram
 ```
 sns.histplot(data=df, x='price', hue='body_style', kde=True);
@@ -68,8 +70,10 @@ plt.xlabel('Horsepower')
 sns.axes_style('whitegrid')
 sns.boxplot(data=df, x='horsepower',color='green');
 ```
-* In a boxplot, when the median is closer to the left of the box and the whisker is shorter on the left end of the box, we say that the distribution is **positively skewed (skewed right)**.
-* Similarly, when the median is closer to the right of the box and the whisker is shorter on the right end of the box, we say that the distribution is **negatively skewed (skewed left)**.
+* In a boxplot, when the median is closer to the left of the box and the whisker is shorter on the left end of the box,
+  we say that the distribution is **positively skewed (skewed right)**.
+* Similarly, when the median is closer to the right of the box and the whisker is shorter on the right end of the box,
+  we say that the distribution is **negatively skewed (skewed left)**.
 * **Outliers** are points that lie outside the minimum and maximum value of the boxplot. They are calculated by using the following equations:
   * For outliers on the left-hand side(towards the minimum side) of the data: **Q1-1.5*IQR**
   * For outliers on the right-hand side(towards the maximum side) of the data: **Q3+1.5*IQR**
@@ -212,6 +216,8 @@ sns.pairplot(data=df, vars=['wheel_base', 'curb_weight', 'engine_size', 'price']
 * A heatmap is a graphical representation of data as a color-encoded matrix.
 * It is a great way of representing the correlation for each pair of columns in the data.
 * The **heatmap()** function of seaborn helps us to create such a plot.
+* In a heatmap, the **colors typically represent Frequency**.
+* Heat mpas are commonly use in web analytics to visualize user interactions on websites.
 ```
 sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr());
 
