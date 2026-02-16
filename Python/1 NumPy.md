@@ -1,4 +1,4 @@
-# Common Coammnds used in NumPy
+# Common Coammnds used in NumPy - Week 2
 
 ### Array
 * An array is a data structure that stores values of same data type.
