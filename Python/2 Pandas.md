@@ -1,4 +1,4 @@
-# Common Coammnds used in Pandas
+# Common Coammnds used in Pandas -- Week 2
 
 ### Pandas Series
 * Pandas Series is a one-dimensional **labeled array/list** capable of holding data of any type (integer, string, float, python objects, etc.).
