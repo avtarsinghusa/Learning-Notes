@@ -96,6 +96,11 @@ Unlike a histogram, which shows the shape of a distribution, a boxplot focuses o
 
 #### When to use a Histogram instead
 Use a **histogram** when you want to see the shape of the data for a **single variable** (e.g., is it bimodal, skewed, or normally distributed?). Use a **boxplot** when you need to compare that shape across **multiple groups**.
+```
+# showfliers parameter controls the representation of outliers in the boxplot, it removes them from the plot
+sns.boxplot(data=data,x='Distance_bins',y='Price',showfliers=False) 
+plt.show()
+```
 
 #### Bar Graph
 * A bar graph is generally used to **show the counts of observations in each bin** (or level or group) **of categorical variable** using bars.
@@ -197,6 +202,44 @@ sns.scatterplot(data=df, x='engine_size', y='horsepower', hue='fuel_type', style
 - If the points on the scatter plot seem to be scattered randomly, we say that there is **no correlation** between the variables.
 * **Note**: A **strong correlation** will have **data points close together**, while a **weak correlation** will have **data points that are further apart**.
 * We can not measure the relationship quantitatively using a scatter plot. It just gives an expression for the relative change between the variables.
+
+#### Relationship Plot
+* **sns.relplot()** (stands for **rel**ationship **plot**) is a figure-level function in Seaborn designed to visualize the relationship between two numerical variables.
+* While it is most commonly used to create scatter plots, its true power lies in its ability to create structured subplots based on categorical variables using **faceting**.
+
+* **Key Features of `relplot()`**
+  1. Faceting (Subplots) -- Using the `col` and `row` parameters, you can split your data into different panels based on categorical variables instantly.
+  2. **Versatility (`kind`)** -- You can switch between different types of relationship plots by changing the `kind` parameter:
+    * `kind="scatter"` (default)
+    * `kind="line"`
+  3. **Semantic Mapping** -- It allows you to map additional variables to visual aesthetics:
+      * `hue`: Colors points based on a variable.
+      * `size`: Changes point size based on a variable.
+      * `style`: Changes point shape based on a variable.
+
+##### Code Example: Complex Visualization
+* Here is how to use `relplot` to compare car `horsepower` vs `mpg`, colored by `origin`, and split into subplots based on `cylinders`.
+```
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load sample data
+df = sns.load_dataset('mpg')
+
+# Using relplot to structure the data visualization
+sns.relplot(
+    data=df, 
+    x='horsepower', 
+    y='mpg', 
+    hue='origin',      # Color by origin
+    size='weight',     # Size by weight
+    col='cylinders',   # Subplot by cylinder count
+    kind='scatter',
+    height=4, 
+    aspect=0.7
+)
+plt.show()
+```
 
 #### Pair Plot
 * A pairplot **shows the relationship between two numeric variables for each pair of columns in the dataset**.
