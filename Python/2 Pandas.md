@@ -402,6 +402,14 @@ Value	  Absolute Count (Statement A)	Relative Frequency (Statement B)
 Apple	       3	                        0.5 (or 50%)
 Banana	     2	                        0.333 (or 33.3%)
 Chocolate	   1	                        0.166 (or 16.7%)
+
+# Another Example
+# Finding the Majority Value
+# Find the majority value in the Purpose column. Store the value in a dictionary named majority where the key is the majority value and the item is its percentage.
+majority_value = df['Purpose'].value_counts(normalize=True).idxmax()
+majority_percentage = df['Purpose'].value_counts(normalize=True).max() * 100
+majority = {majority_value: majority_percentage}
+# Explanation: To find the majority value in the Purpose column, you should use the value_counts method with normalize=True to get the relative frequencies. Then, use idxmax() to find the value with the highest frequency and max() to get its percentage. The groupby method is not needed for this task.
 ```
 ####   Statistical Functions
 * **mean()** - to check the mean (average) value of the column -- ``` data['price'].mean() ```
