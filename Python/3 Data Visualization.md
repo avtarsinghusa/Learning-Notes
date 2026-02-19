@@ -270,4 +270,8 @@ sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr(), 
 
 # We can apply a different colormap with the cmap parameter for better visual appeal.
 sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr(), annot=True, cmap='YlGnBu');
+
+# fmt parametere used for string annotation i.e. after decimal point upto how many numbers will be displayed. .2g = .00, .1f = .0
+corr_matrix = df[['wheel_base', 'curb_weight', 'engine_size', 'price']].corr()
+plot = sns.heatmap(data = corr_matrix, annot=True, fmt = '.2g');
 ```
