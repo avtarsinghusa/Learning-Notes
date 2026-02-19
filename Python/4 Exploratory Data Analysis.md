@@ -38,8 +38,16 @@ print("Count of Unique Values:", count_unique)
 # Output--
 # Unique Values: ['Apple' 'Banana' 'Orange']
 # Count of Unique Values: 3
-```
 
+# Example 2 : Find Unique Values
+# Find the unique values of each categorical column (e.g., Sex, Job, Housing, Saving accounts, Checking account, Purpose).
+# Store these unique values in a new DataFrame named unique_values_df with columns Column and Unique Values.
+import pandas as pd
+df = pd.read_csv('data.csv')
+columns = ['Sex', 'Job', 'Housing', 'Saving accounts', 'Checking account', 'Purpose']
+unique_values = {col: df[col].unique() for col in columns}
+unique_values_df = pd.DataFrame(list(unique_values.items()), columns=['Column', 'Unique Values'])
+```
 
 ### Univariate Analysis
 * Univariate analysis is the simplest form of analyzing data. It focuses on **one variable at a time** to describe its distribution, central tendency, and spread (variability).
