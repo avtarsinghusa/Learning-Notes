@@ -290,4 +290,52 @@ def treat_outliers(df, col):
     df[col] = np.clip(df[col], lower_whisker, upper_whisker)
 
     return df
+
+outlier_columns = ['Ad Spend','Profit Margin', 'Revenue']
+for col in outlier_columns:
+    df = treat_outliers(df, col)
+-------------
+# Another Example
+# Identify columns where the percentage of values outside the bounds is greater than 11%, and assign them to a list
+import pandas as pd
+df = pd.read_csv('data.csv')
+
+for col in df.columns:
+    if df[col].dtype != 'object':
+        Q1 = df[col].quantile(0.25)
+        Q3 = df[col].quantile(0.75)
+        IQR = Q3- Q1
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+        if ((df[col] < lower_bound) | (df[col] > upper_bound)).sum() / df.shape[0] > 0.11:
+            outlier_columns.append(col)
+#Explanation: You need to calculate the percentage of values outside the bounds for each numerical column and check if it exceeds 11%. If it does, append the column name to the outlier_columns list.
+import pandas as pd
+
+# Step 2: Read Dataset
+df = pd.read_csv('data.csv')
+
+# Step 3: Calculate Q1 and Q3
+# We select numeric columns first to avoid errors with text columns
+numeric_df = df.select_dtypes(include=['number'])
+Q1 = numeric_df.quantile(0.25)
+Q3 = numeric_df.quantile(0.75)
+
+# Step 4: Calculate IQR
+# This creates a Series, allowing the test script to use .to_numpy()
+iqr = Q3 - Q1
+
+# Step 5: Calculate Upper and Lower bounds
+upper_bound = Q3 + 1.5 * iqr
+lower_bound = Q1 - 1.5 * iqr
+
+# Step 6: Identify Columns with Outliers
+# 1. Compare the whole dataframe to the bounds
+# 2. .sum() counts outliers per column
+# 3. Divide by total rows (df.shape[0]) to get the percentage
+outlier_percentages = ((numeric_df < lower_bound) | (numeric_df > upper_bound)).sum() / df.shape[0]
+
+# Filter for percentages > 11% and convert the index to a list
+outlier_columns = outlier_percentages[outlier_percentages > 0.11].index.tolist()
+# Vectorization: By calling df.quantile() on the whole DataFrame, Q1, Q3, and iqr become Pandas Series.
 ```
