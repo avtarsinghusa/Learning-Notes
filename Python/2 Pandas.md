@@ -446,3 +446,7 @@ ata['new_price'] =data['price'].apply(profit)
 ```
 data.sort_values(by='new_price',ascending=False) # by default ascending is set to True
 ```
+* Replace specific values in the column or in all cloumns
+```
+df['BuildingArea'] = df['BuildingArea'].replace(['missing', 'inf'], np.nan)
+df = df.replace(['inf', 'missing', np.inf, -np.inf], np.nan)
