@@ -274,4 +274,7 @@ sns.heatmap(data=df[['wheel_base','curb_weight','engine_size','price']].corr(), 
 # fmt parametere used for string annotation i.e. after decimal point upto how many numbers will be displayed. .2g = .00, .1f = .0
 corr_matrix = df[['wheel_base', 'curb_weight', 'engine_size', 'price']].corr()
 plot = sns.heatmap(data = corr_matrix, annot=True, fmt = '.2g');
+
+# Important -- Compute the correlation of the numerical columns using corr()
+corr_matrix = df.corr(numeric_only=True)
 ```
