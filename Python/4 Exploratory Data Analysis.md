@@ -3,8 +3,11 @@
 ```
 data = pd.read_csv('/content/drive/MyDrive/Melbourne_Housing.csv',na_values=['missing','inf'])
 
-# Checking for missing values in the data
+# Checking for missing values i.e null in the data
 data.isnull().sum()
+
+# Checking for non null values in the data, identify rows without null values
+df.notna().all(axis=1).sum()
 
 # Checking for duplicate entries in the data
 data.duplicated().sum()
