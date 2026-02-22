@@ -332,6 +332,6 @@ words = bow_vec.get_feature_names_out()
 df_BOW = pd.DataFrame(data_features_BOW, columns=bow_vec.get_feature_names_out())
 df_BOW.head()
 ```
-
-
-
+* Note: **N-gram models** help understand language better by looking at the order or sequence of words. This means they pay attention to how words appear together in a sentence, which helps capture the meaning and flow of language better than the **bag-of-words (BOW) model, which treats each word separately and ignores their order**. The other points are incorrect because n-gram models don’t affect the size of the vocabulary. The vocabulary remains the same even though the model creates n-grams from the existing corpus. Removing stopwords (like "the" or "is") is optional for both n-gram and BOW models because it doesn’t affect their core functionalities.
+* The **"Bag of Words" model represents words** in a document **based on their frequency**, providing a quantitative measure of each word's importance.
+* To identify the emotional tone expressed in a piece of text, such as positive, negative, or neutral. **Sentiment analysis aims to understand and categorize the sentiment or emotion conveyed in textual content**, helping to gauge the author's attitude or opinion towards a particular subject.
