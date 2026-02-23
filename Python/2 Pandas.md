@@ -450,7 +450,58 @@ ata['new_price'] =data['price'].apply(profit)
 ```
 data.sort_values(by='new_price',ascending=False) # by default ascending is set to True
 ```
-* Replace specific values in the column or in all cloumns
+* **Replace specific values in the column or in all cloumns**
 ```
 df['BuildingArea'] = df['BuildingArea'].replace(['missing', 'inf'], np.nan)
 df = df.replace(['inf', 'missing', np.inf, -np.inf], np.nan)
+```
+#### What is agg() in pandas?
+* **agg()** (short for aggregate) is used to:
+  * Apply one or more summary functions (like count, mean, sum, min, max, etc.) to data.
+
+* **Basic Example (Without groupby)**
+```
+import pandas as pd
+df = pd.DataFrame({
+    'rating': [5, 4, 3, 5, 4]
+})
+df['rating'].agg('mean')
+✅ Output: 4.2
+It calculates the average rating.
+```
+
+* 2️⃣ **Multiple Aggregations on One Column**
+```
+df['rating'].agg(['count', 'mean', 'max'])
+Output:
+	rating
+count	5
+mean	4.2
+max	5
+Here we applied multiple summary functions at once.
+```
+* 3️⃣ **Most Common Use: With groupby()**
+* This is where agg() becomes powerful.
+```
+Example Data:
+restaurant_name	rating
+A	5
+B	4
+A	3
+B	5
+A	4
+# Group + Aggregate
+df.groupby('restaurant_name').agg(
+    count=('rating', 'count'),
+    mean=('rating', 'mean')
+)
+Output:
+restaurant_name	count	mean
+A	3	4.0
+B	2	4.5
+# What This Line Means count=('rating', 'count')
+# It means: Look at column 'rating', Apply function 'count', Name the new column 'count'
+
+#  restaurants must have a rating count of more than 50 and the average rating should be greater than 4.
+eligible_restaurants = agg_df.query('count > 50 and mean > 4')
+```
