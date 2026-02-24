@@ -94,9 +94,13 @@ Variability measures tell us how different the scores are from each other and fr
 The methods you use depend on the types of data (numerical or categorical) you are comparing.
 
 | Type of Variables           | Purpose                 | Recommended Visualization |
+
 | **Numerical vs. Numerical** | Study correlation/trend | **Scatter Plot** |
+
 | **Numerical vs. Categorical** | Compare means/spread across groups | **Boxplot** or **Violin Plot** |
+
 | **Categorical vs. Categorical** | Study association/proportion | **Stacked Bar Chart** or **Heatmap** |
+
 
 * Examples
 #### 1. Numerical vs. Numerical: Scatter Plot
