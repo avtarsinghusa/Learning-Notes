@@ -57,6 +57,7 @@ unique_values_df = pd.DataFrame(list(unique_values.items()), columns=['Column', 
 Here is the explanation with a concrete example.
 Example Scenario
 Imagine you have a dataset of 100 students and their scores on a recent math test (ranging from 0 to 100). The variable we are analyzing is **`Score`**.
+* **HistPlot** and **BoxPlot** can be use **for the numerical columns**, for the c**ategorial columns** we can **use the CountPlot**. 
 
 #### 1. Assessing Central Tendency (Where is the middle?)
 Central tendency measures tell us where the bulk of the data lies.
