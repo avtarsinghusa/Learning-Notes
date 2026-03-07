@@ -109,3 +109,45 @@ Example:
 Ice cream sales and drowning incidents may both increase in summer (correlation), but ice cream sales do not cause drowning.
 
 ✅ Simple definition: Causation is when one variable directly produces a change in another variable (cause and effect).
+
+### Categorical variables:
+* Categorical variables are variables that represent groups or categories rather than numerical values. They are mainly divided into two types:
+
+
+**1. Nominal Variables**
+
+Nominal variables are categories **without any natural order or ranking**.
+
+Examples
+
+Gender: Male, Female
+
+Blood group: A, B, AB, O
+
+Colors: Red, Blue, Green
+
+Country names
+
+Key feature:
+**There is no meaningful order between the categories.**
+
+Example:
+Red is not greater or smaller than Blue.
+
+**2. Ordinal Variables**
+
+Ordinal variables are categories that **have a meaningful order or ranking**, but the difference between categories is not precisely measurable.
+
+Examples
+
+Education level: High School → Bachelor’s → Master’s → PhD
+
+Satisfaction level: Poor → Fair → Good → Excellent
+
+Movie ratings: 1 star → 2 stars → 3 stars → 4 stars → 5 stars
+
+Key feature:
+The categories follow a logical order, but the distance between them is not necessarily equal.
+
+Example:
+The difference between Good and Excellent may not be the same as between Fair and Good.
