@@ -188,3 +188,23 @@ Green 	0	  0	   1
 
 Use case:
 **Best for nominal variables where categories have no order.**
+
+**MAE (Mean Absolute Error)** is a metric used to **measure the accuracy of a regression model**. It calculates the average absolute difference between the actual values and the predicted values. 📊
+
+Definition
+
+MAE tells us how far the model’s predictions are from the real values on average.
+
+Example
+
+Actual Value	Predicted Value	Absolute Error
+
+100	90	10
+
+150	140	10
+
+200	210	10
+
+MAE=(10+10+10)/3=10
+
+So the model’s predictions are off by 10 units on average.
