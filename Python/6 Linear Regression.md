@@ -22,3 +22,55 @@
   * **Clustering**: Grouping data.
   * **Dimensionality reduction**: Compressing data.
   * **Association rule learning**: If X then Y
+### Linear regression -- 
+* Linear regression models the relationship as a straight line, and multiple regression, which involves more than one independent variable. This technique is widely used for prediction, forecasting, and identifying causal relationships.
+
+#### When developing a regression model, you work with two main types of variables:
+##### 1. Independent Variables (Predictor / Input Variables)
+These are the variables **you use to predict or explain something**.
+They are the **inputs** to the model.
+* Represented as **X**
+* They **influence or help explain** another variable
+* You can have **one or many** independent variables
+**Examples**
+ * House price prediction
+   * Size of house (X₁)
+   * Number of bedrooms (X₂)
+   * Location score (X₃)
+ * Student performance prediction
+   * Hours studied (X₁)
+   * Attendance (X₂)
+
+##### 2. Dependent Variable (Target / Response Variable)
+This is the variable **you want to predict or explain**.
+* Represented as **Y**
+* Its value **depends on the independent variables**
+**Examples**
+* House price (**Y**)
+* Student exam score (**Y**)
+* Sales revenue (**Y**)
+
+**Example Regression Model**
+**Simple Linear Regression:** 
+**Y=β0​+β1​X+ϵ**
+* **Y** → Dependent variable (what we predict)
+* **X** → Independent variable (predictor)
+* **β₀** → Intercept
+* **β₁** → Coefficient (effect of X on Y)
+* **ε** → Error term
+
+## Multiple Regression Example: 
+**Y=β0​+β1​X1​+β2​X2​+β3​X3​+ϵ**
+Example:
+* **Y** = House Price
+* **X₁** = Size of house
+* **X₂** = Number of bedrooms
+* **X₃** = Distance from city center
+
+✅ **Summary**
+
+| Variable Type        | Meaning                | Symbol |
+| -------------------- | ---------------------- | ------ |
+| Independent Variable | Input used to predict  | X      |
+| Dependent Variable   | Output being predicted | Y      |
+
