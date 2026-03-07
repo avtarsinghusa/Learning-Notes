@@ -91,14 +91,17 @@ Example:
 Example
 
 Studying more hours → Higher exam scores
+
 Studying more causes the improvement in scores.
 
 Smoking → Increased risk of lung disease
+
 Smoking causes damage that leads to disease.
 
 **Causation vs Correlation**
 
 Correlation: Two variables are related or move together.
+
 Causation: One variable directly affects the other.
 
 Example:
