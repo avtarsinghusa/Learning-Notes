@@ -55,8 +55,8 @@ This is the variable **you want to predict or explain**.
 **Y=β0​+β1​X+ϵ**
 * **Y** → Dependent variable (what we predict)
 * **X** → Independent variable (predictor)
-* **β₀** → Intercept
-* **β₁** → Coefficient (effect of X on Y)
+* **β₀** → Intercept (The average value of response when the explanatory variable is 0)
+* **β₁** → Coefficient (effect of X on Y) (The average change in the response for one unit increase in the explanatory variable)
 * **ε** → Error term
 
 **Multiple Regression Example:**
