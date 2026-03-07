@@ -17,7 +17,7 @@
 ### Tools and techniques
 #### Supervised learning
   * **Regression**: desired output is a continuous number.
-  * Classification: desired output is a category.
+  * **Classification**: desired output is a category.
 #### Unsupervised learning
   * **Clustering**: Grouping data.
   * **Dimensionality reduction**: Compressing data.
