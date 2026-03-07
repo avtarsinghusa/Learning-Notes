@@ -32,6 +32,7 @@ They are the **inputs** to the model.
 * Represented as **X**
 * They **influence or help explain** another variable
 * You can have **one or many** independent variables
+
 **Examples**
  * House price prediction
    * Size of house (X₁)
