@@ -151,3 +151,40 @@ The categories follow a logical order, but the distance between them is not nece
 
 Example:
 The difference between Good and Excellent may not be the same as between Fair and Good.
+
+### Encoding the Categorical Variables
+* When using categorical variables in regression or machine learning, they must be converted into numbers. This process is called encoding. The main types of encoding are:
+
+**1. Label Encoding**
+Each category is assigned a unique number.
+
+Example
+
+Color	Encoded Value
+
+Red	0
+Blue	1
+Green	2
+
+Use case:
+**Often used for ordinal variables where categories have an order.**
+
+Example:
+Low = 1, Medium = 2, High = 3
+
+**2. One-Hot Encoding (Dummy Encoding)**
+
+Each category becomes a separate binary column (0 or 1).
+
+Example
+
+Color	Red	Blue	Green
+
+Red	   1	  0	   0
+
+Blue	  0	  1   	0
+
+Green 	0	  0	   1
+
+Use case:
+**Best for nominal variables where categories have no order.**
