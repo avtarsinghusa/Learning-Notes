@@ -59,7 +59,7 @@ This is the variable **you want to predict or explain**.
 * **β₁** → Coefficient (effect of X on Y)
 * **ε** → Error term
 
-## Multiple Regression Example: 
+**Multiple Regression Example:**
 **Y=β0​+β1​X1​+β2​X2​+β3​X3​+ϵ**
 Example:
 * **Y** = House Price
@@ -74,3 +74,30 @@ Example:
 | Independent Variable | Input used to predict  | X      |
 | Dependent Variable   | Output being predicted | Y      |
 
+* **Correlation** is a **statistical measure** that describes **the extent to which two variables are related to each other** OR that describes **the strength and direction** of a **relationship** between two variables. It typcially **ranges between -1 and 1**.
+*A **linear relationship** between two variables is one in which the **rate of change between the two is constant**. Example: The relationship between the distance traveled and the time taken at a constant speed.
+
+### Pearson’s Correlation Coefficient:
+* A statistical measure that quantifies the **strength and direction of the linear relationship between two continuous variables**. One of the most commonly used measures of correlation.
+
+**Causation** means that one variable directly causes a change in another variable.
+  In other words, when one event (the cause) happens, it produces an effect in another variable.
+
+Example
+
+Studying more hours → Higher exam scores
+Studying more causes the improvement in scores.
+
+Smoking → Increased risk of lung disease
+Smoking causes damage that leads to disease.
+
+**Causation vs Correlation**
+
+Correlation: Two variables are related or move together.
+Causation: One variable directly affects the other.
+
+Example:
+
+Ice cream sales and drowning incidents may both increase in summer (correlation), but ice cream sales do not cause drowning.
+
+✅ Simple definition: Causation is when one variable directly produces a change in another variable (cause and effect).
