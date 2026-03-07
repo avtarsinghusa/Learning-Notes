@@ -79,7 +79,6 @@ Example:
 | Independent Variable | Input used to predict  | X      |
 | Dependent Variable   | Output being predicted | Y      |
 
-
 * **Correlation** is a **statistical measure** that describes **the extent to which two variables are related to each other** OR that describes **the strength and direction** of a **relationship** between two variables. It typcially **ranges between -1 and 1**.
 *A **linear relationship** between two variables is one in which the **rate of change between the two is constant**. Example: The relationship between the distance traveled and the time taken at a constant speed.
 
