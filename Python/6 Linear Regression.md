@@ -46,6 +46,7 @@ They are the **inputs** to the model.
 This is the variable **you want to predict or explain**.
 * Represented as **Y**
 * Its value **depends on the independent variables**
+
 **Examples**
 * House price (**Y**)
 * Student exam score (**Y**)
