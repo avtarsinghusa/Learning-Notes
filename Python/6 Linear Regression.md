@@ -24,6 +24,7 @@
   * **Association rule learning**: If X then Y
 ### Linear regression -- 
 * Linear regression models the relationship as a straight line, and multiple regression, which involves more than one independent variable. This technique is widely used for prediction, forecasting, and identifying causal relationships.
+* The **vertical distances** are a measure of how far away the prediction is from the actual value, and **these are called residuals**. We **aim to reduce** the sum of the magnitudes of these residuals which helps the predicted values to get closer to the actual values. The objective of linear regression is to minimize the sum of squared vertical distances.
 
 #### When developing a regression model, you work with two main types of variables:
 ##### 1. Independent Variables (Predictor / Input Variables)
@@ -208,3 +209,59 @@ Actual Value	Predicted Value	Absolute Error
 MAE=(10+10+10)/3=10
 
 So the model’s predictions are off by 10 units on average.
+
+### Model Performance Evaluation
+* **RMSE** (Root Mean Squared Error): RMSE measures the square root of the average squared differences between actual and predicted values, providing a metric that is in the same units as the target variable and penalizes larger errors more heavily.
+* **MAPE** (Mean Absolute Percentage Error): MAPE calculates the average absolute percentage difference between actual and predicted values, expressing prediction accuracy as a percentage and allowing for easy interpretation across different scales.
+* **R²** (Coefficient of Determination): R² indicates the proportion of the variance in the dependent variable that is predictable from the independent variables, with values closer to 1 signifying a better fit. **Note:** **R-squared individually can’t tell whether a variable is useful for prediction or not**. Whenever we add a new variable, the R-squared value will increase. But, that is not true in the case of **adjusted R-squared, which increases only when the added variable is useful for model prediction.**
+* **MAE** (Mean Absolute Error): MAE measures the average absolute difference between the actual and predicted values, providing a straightforward metric of prediction accuracy.
+
+**Simple Linear Regression - Sales vs Advertising Expenditure**
+
+      RMSE 	        MAE 	         MAPE 	   R-squared 	Adj R-squared
+
+      2753.419094 	2207.551603 	9.647262 	 0.415783 	  0.415539
+
+* The performance metrics evaluate how well your linear regression model predicts **Sales based on Advertising Expenditure**.
+Here is how to interpret each value to understand your model's "health":
+
+**1. Error Metrics (The "How Far Off Are We?" Section)**
+
+These values represent the distance between what your model predicted and what actually happened. **Lower is better.**
+
+   **MAE** (Mean Absolute Error): 2207.55
+
+  On average, your model’s sales predictions are off by about 2,208 units (or dollars, depending on your currency). This is a direct, easy-to-understand average of all errors.
+
+   **RMSE** (Root Mean Square Error): 2753.42
+
+  Like MAE, this measures error, but it "punishes" larger mistakes more severely. Since your RMSE is significantly higher than your MAE, it suggests you have some outliers—specific cases where the model was way off.
+
+   **MAPE** (Mean Absolute Percentage Error): 9.65%
+
+   **This is often the most useful for business stakeholders**. It tells you that, on average, **your predictions are within 90.35% accuracy (100% - 9.65%)**. 
+   **A MAPE under 10% is generally considered an excellent prediction for sales data.**
+
+**2. Goodness-of-Fit (The "How Much Do We Know?" Section)**
+
+These values range from 0 to 1 and tell you how much of the "story" your variables are telling. Higher is better.
+
+   **R-squared**: 0.4158
+
+   This means **Advertising Expenditure explains about 41.6% of the variation in your Sales.**
+
+   The **remaining 58.4% is caused by things not in this specific model** (like the Discounts we discussed earlier, seasonality, or competitor actions).
+
+   **Adj R-squared:** 0.4155
+
+    This is a "honest" version of R-squared. It adjusts the score based on how many variables you use. Since you only have one variable here, it is almost identical to the regular R-squared.
+
+Summary Table for Quick Reference
+
+    Metric	      Value	      Interpretation
+
+    Accuracy	   ~90.35%	    Excellent for most business use cases.
+
+    Typical Error	2,208	    The average "miss" per prediction.
+
+    Explanatory Power	41.6%	Ads are a major factor, but more than half of your sales are driven by other things.
