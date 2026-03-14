@@ -84,6 +84,12 @@
  * If the tree becomes too complex, the penalty term α|T| increases.
  * The algorithm removes branches that increase complexity without improving accuracy.
 
+α (alpha) = (Error(Pruned) - Error(Original)) / Number of nodes reduced
+
+**Smaller α (alpha) means** - Smaller drop in the performance per node lost.
+
+**Optimal α (alpha) value correspond to the tree having the lowest error on unseen(test) data.**
+
 **How Cost Complexity Pruning Works**
  * Step 1: Build a full decision tree (very deep tree).
  * Step 2: Calculate the cost complexity for each subtree.
