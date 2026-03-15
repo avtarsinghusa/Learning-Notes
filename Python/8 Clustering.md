@@ -130,3 +130,94 @@
 ❌ Computationally expensive for large datasets
 
 ❌ Sensitive to noise and outliers
+
+### 1️⃣ Centroid-based clustering
+* The most common example is **K-means clustering**.
+
+#### Idea
+* Each cluster has a **center point (centroid)**.
+* Data points are assigned to the **nearest centroid**.
+* The centroid keeps updating until clusters stabilize.
+
+#### Steps
+1. Choose **K (number of clusters)**
+2. Initialize **K centroids**
+3. Assign each point to the nearest centroid
+4. Recalculate centroids
+5. Repeat until convergence
+
+#### Pros
+✔ Simple and fast
+
+✔ Works well for large datasets
+
+#### Cons
+
+❌ Must choose **K beforehand**
+
+❌ Sensitive to outliers
+
+❌ Works best with **spherical clusters**
+
+### 2️⃣ Density-based clustering
+* A popular algorithm is **DBSCAN**.
+
+#### Idea
+
+Clusters are formed in **dense regions of data points** separated by sparse regions.
+
+#### How it works
+
+Points are classified as:
+
+* **Core points** – many neighbors nearby
+* **Border points** – near a cluster but not dense
+* **Noise points** – outliers
+
+#### Pros
+
+✔ Detects **arbitrarily shaped clusters**
+
+✔ Automatically detects **outliers**
+
+#### Cons
+
+❌ Hard to choose parameters (`eps`, `minPts`)
+
+❌ Struggles when clusters have **different densities**
+
+### 3️⃣ Distribution-based clustering
+* A common method is **Gaussian Mixture Model (GMM)**.
+
+#### Idea
+* Data is assumed to come from **multiple probability distributions** (usually Gaussian).
+* Each cluster is represented by a **probability distribution** rather than a hard boundary.
+
+#### Key feature
+* Points belong to clusters **with probabilities** instead of strictly belonging to one cluster.
+
+        Example:
+        * Point A → 70% Cluster 1
+        * Point A → 30% Cluster 2
+
+#### Pros
+
+✔ Flexible cluster shapes
+
+✔ Probabilistic clustering
+
+#### Cons
+
+❌ Computationally expensive
+
+❌ Requires assumptions about distributions
+
+#### 🧠 Quick comparison
+
+        | Type               | Example Algorithm       | Key Idea                                      |
+        | ------------------ | ----------------------- | --------------------------------------------- |
+        | Connectivity-based | Hierarchical clustering | Connect nearby points                         |
+        | Centroid-based     | K-means                 | Cluster around centroids                      |
+        | Density-based      | DBSCAN                  | Dense regions form clusters                   |
+        | Distribution-based | Gaussian Mixture Model  | Data generated from probability distributions |
+
