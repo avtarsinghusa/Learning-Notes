@@ -84,74 +84,49 @@
   * Clusters are formed by linking nearby points step-by-step.
 
 #### 2️⃣ Hierarchical clustering
+* **The most common connectivity-based clustering method is Hierarchical clustering.**
+* **It builds clusters in a tree structure called a dendrogram.**
+* Two main types:
+  * Agglomerative (Bottom-Up)
+    * Start with each point as its own cluster
+    * Merge the closest clusters step by step
+    * Continue until all points form one cluster
 
-The most common connectivity-based clustering method is
-Hierarchical clustering.
+                Example:
+                A   B   C   D
+                ↓
+                (A,B)   (C,D)
+                ↓
+                (A,B,C,D)
 
-It builds clusters in a tree structure called a dendrogram.
+  * Divisive (Top-Down)
+    * Start with all points in one cluster
+    * Split them into smaller clusters step by step.
 
-Two main types:
+#### 3️⃣ How distance is measured
+* Connectivity clustering uses distance metrics like: Euclidean distance / Manhattan distance / Cosine distance
+* These help determine which points should connect first.
 
-Agglomerative (Bottom-Up)
+#### 4️⃣ Linkage methods
+* When merging clusters, different linkage rules are used.
 
-Start with each point as its own cluster
+                Linkage	                Meaning
+                Single linkage	distance between closest points
+                Complete linkage	distance between farthest points
+                Average linkage	average distance between clusters
 
-Merge the closest clusters step by step
+*These affect the shape of clusters.
 
-Continue until all points form one cluster
-
-Example:
-
-A   B   C   D
-↓
-(A,B)   (C,D)
-↓
-(A,B,C,D)
-Divisive (Top-Down)
-
-Start with all points in one cluster
-
-Split them into smaller clusters step by step.
-
-3️⃣ How distance is measured
-
-Connectivity clustering uses distance metrics like:
-
-Euclidean distance
-
-Manhattan distance
-
-Cosine distance
-
-These help determine which points should connect first.
-
-4️⃣ Linkage methods
-
-When merging clusters, different linkage rules are used.
-
-Linkage	Meaning
-Single linkage	distance between closest points
-Complete linkage	distance between farthest points
-Average linkage	average distance between clusters
-
-These affect the shape of clusters.
-
-5️⃣ Example intuition
-
-Imagine people standing in a field.
-
-If two people are close, they join a group.
-Then nearby groups merge together.
-
-Eventually clusters form based on distance connectivity.
-
-6️⃣ Advantages
+#### 5️⃣ Advantages
 
 ✔ No need to specify number of clusters initially
+
 ✔ Works well for small datasets
+
 ✔ Produces a dendrogram that shows cluster relationships
 
-7️⃣ Disadvantages
+#### 6️⃣ Disadvantages
 
 ❌ Computationally expensive for large datasets
+
 ❌ Sensitive to noise and outliers
